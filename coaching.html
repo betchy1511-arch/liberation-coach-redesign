@@ -256,6 +256,38 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold-line);outline-
 .zoom figcaption{font-size:.78rem;color:var(--ink-2);margin-top:var(--s1)}
 @media (max-width:860px){.steps-top{grid-template-columns:1fr;gap:var(--s3)}}
 
+
+/* v7 next step: two columns, steps and answers stacked, no three-across grids */
+.next-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(40px,6vw,96px);align-items:start}
+.next-side{display:grid;gap:var(--s3);justify-items:start}
+.next-side h2{font-size:clamp(2.2rem,4vw,3.4rem)}
+.next-side .zoom{width:100%}
+.next-side .zoom img{aspect-ratio:4/5;object-position:62% 40%}
+@media (max-width:860px){.next-side .zoom img{aspect-ratio:4/3}}
+.journey{list-style:none;margin:0;padding:0}
+.journey li{display:grid;grid-template-columns:72px minmax(0,1fr);gap:var(--s3);padding:var(--s4) 0;border-top:1px solid #d6dfdc}
+.journey li:first-child{border-top:0;padding-top:0}
+.journey .n{font-family:var(--display);font-size:3.4rem;line-height:.9;color:var(--teal-ink)}
+.journey h3{font-size:1.75rem;margin-bottom:var(--s1)}
+.journey p{margin:0;color:var(--ink-2)}
+.quick{margin-top:var(--s2);border-top:2px solid var(--gold-line);padding-top:var(--s4);display:grid;gap:var(--s3);justify-items:start}
+.quick dl{margin:0;display:grid;gap:var(--s3)}
+.quick dt{font-weight:700}
+.quick dd{margin:4px 0 0;color:var(--ink-2)}
+@media (max-width:860px){.next-grid{grid-template-columns:1fr}.journey li{grid-template-columns:52px minmax(0,1fr)}.journey .n{font-size:2.6rem}}
+
+/* v7 finale: photo of Victor beside left-aligned text, edge to edge */
+.finale{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:stretch}
+.finale-photo{margin:0;position:relative;min-height:520px}
+.finale-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.finale-photo figcaption{position:absolute;left:16px;bottom:12px;font-size:.75rem;color:var(--on-deep);background:rgba(13,46,44,.85);padding:3px 8px;border-radius:6px}
+.finale-body{display:grid;align-content:center;padding:clamp(48px,6vw,96px) max(var(--gut-r),calc((100vw - var(--wrap)) / 2 + 20px)) clamp(48px,6vw,96px) clamp(32px,5vw,80px)}
+.finale .text{display:grid;gap:var(--s3);justify-items:start;text-align:left;max-width:560px}
+.finale .text h2{font-size:clamp(2.2rem,3.8vw,3.4rem)}
+.finale .text p{color:var(--on-deep-2);margin:0}
+.finale .text p a{color:var(--on-deep);font-weight:600;text-underline-offset:4px}
+@media (max-width:860px){.finale{grid-template-columns:1fr}.finale-photo{min-height:0;aspect-ratio:4/3}.finale-body{padding:var(--s5) var(--gut-r) var(--s5) var(--gut)}}
+
 /* Footer */
 .site-footer{background:var(--deep);color:var(--on-deep-2);padding-block:var(--s5) var(--s4);border-top:1px solid rgba(255,255,255,.08)}
 .foot{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(2,minmax(0,1fr));gap:var(--s4)}
@@ -364,8 +396,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold-line);outline-
   </div>
 </section>
 
-<section class="band deep on-deep" aria-labelledby="final-h">
-  <div class="wrap close">
+<section class="deep on-deep finale" aria-labelledby="final-h">
+  <figure class="finale-photo"><img src="img/v-close-coaching.jpg" alt="Victor Pierantoni laughing on a video call" width="660" height="660" loading="lazy"><figcaption>Placeholder: frame from a recorded client call on Victor's YouTube channel.</figcaption></figure>
+  <div class="finale-body">
     <div class="text">
       <h2 id="final-h">Apply for 1:1 Coaching With Victor</h2>
       <p>Tell Victor what you would like to explore. Your next step is a discovery Zoom call with him, with no obligation to proceed with coaching.</p>
