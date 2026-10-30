@@ -212,6 +212,50 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold-line);outline-
   .film-btn{min-height:32px;padding:3px 12px;font-size:.78rem;white-space:nowrap}
 }
 
+
+/* Client experiences: real conversations from Victor's published videos */
+.stories{background:var(--paper)}
+.stories-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s5);align-items:end;margin-bottom:var(--s5)}
+.stories-head h2{font-size:clamp(2.2rem,4.2vw,3.6rem)}
+.stories-head p{color:var(--ink-2);max-width:46ch;margin:0}
+.feature{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:var(--s5);align-items:center}
+.feature-media,.story-media{position:relative;display:block;border-radius:22px;overflow:hidden;background:var(--deep)}
+.feature-media img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.feature-text{display:grid;gap:var(--s3);justify-items:start}
+.feature-text blockquote{margin:0;font-family:var(--display);font-size:clamp(1.7rem,2.8vw,2.5rem);line-height:1.22}
+.feature-text blockquote p,.story blockquote p{margin:0}
+.who{margin:0;color:var(--ink-2);font-size:1rem}
+.who strong{display:block;color:var(--ink);font-size:1.05rem}
+.play{position:absolute;left:50%;top:50%;width:76px;height:76px;margin:-38px 0 0 -38px;border-radius:50%;background:rgba(251,252,251,.94);box-shadow:0 10px 30px rgba(13,46,44,.35);transition:transform .2s}
+.play::after{content:"";position:absolute;left:31px;top:24px;border-style:solid;border-width:14px 0 14px 22px;border-color:transparent transparent transparent var(--deep)}
+.story-media .play{width:58px;height:58px;margin:-29px 0 0 -29px}
+.story-media .play::after{left:23px;top:18px;border-width:11px 0 11px 17px}
+.feature-media:hover .play,.story-media:hover .play{transform:scale(1.08)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.story-row{list-style:none;margin:var(--s6) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s5) var(--s4)}
+.story{display:grid;gap:var(--s2);align-content:start;scroll-snap-align:start}
+.story-media img{width:100%;height:auto;aspect-ratio:1/1;object-position:50% 25%;object-fit:cover}
+.story blockquote{margin:0;font-family:var(--display);font-size:1.3rem;line-height:1.3}
+.story:nth-child(3n+2){margin-top:var(--s5)}
+.stories-foot{margin-top:var(--s5);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--s3);border-top:1px solid #d6dfdc;padding-top:var(--s3)}
+.stories-foot p{margin:0;color:var(--ink-2);max-width:60ch}
+.player{padding:0;border:0;background:transparent;width:min(1100px,94vw);max-width:none}
+.player::backdrop{background:rgba(8,24,23,.86)}
+.player-box{display:grid;gap:12px;justify-items:end}
+.player-close{min-height:44px;padding:8px 18px;border-radius:999px;border:1.5px solid var(--on-deep);background:var(--deep);color:var(--on-deep);font:600 .95rem var(--text);cursor:pointer}
+.player-frame{width:100%;aspect-ratio:16/9;background:#000;border-radius:14px;overflow:hidden}
+.player-frame iframe{width:100%;height:100%;border:0;display:block}
+
+@media (max-width:860px){.stories-head,.feature{grid-template-columns:1fr;gap:var(--s3)}.feature-text{margin-top:var(--s1)}.story-row{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;gap:var(--s3);margin-top:var(--s5);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--s2)}.story:nth-child(3n+2){margin-top:0}}
+
+/* Steps: Victor on a real call beside the path */
+.steps-top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.8fr);gap:var(--s5);align-items:end;margin-bottom:var(--s5)}
+.steps-top .steps-head{margin-bottom:0;flex-direction:column;align-items:flex-start}
+.zoom{margin:0}
+.zoom img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:22px;border:6px solid var(--deep)}
+.zoom figcaption{font-size:.78rem;color:var(--ink-2);margin-top:var(--s1)}
+@media (max-width:860px){.steps-top{grid-template-columns:1fr;gap:var(--s3)}}
+
 /* Footer */
 .site-footer{background:var(--deep);color:var(--on-deep-2);padding-block:var(--s5) var(--s4);border-top:1px solid rgba(255,255,255,.08)}
 .foot{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(2,minmax(0,1fr));gap:var(--s4)}
@@ -303,7 +347,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold-line);outline-
 
 <section class="band" aria-labelledby="victor-h">
   <div class="wrap victor">
-    <figure class="photo"><img src="img/studio-wide.jpg" alt="Victor Pierantoni at his microphone in his studio" width="1100" height="709"><figcaption>Placeholder: frame from the video on Victor's current homepage.</figcaption></figure>
+    <figure class="photo"><img src="img/v-talk.jpg" alt="Victor Pierantoni speaking at his microphone" width="1100" height="663"><figcaption>Placeholder: frame from a talk on Victor's YouTube channel.</figcaption></figure>
     <div class="panel">
       <h2 id="victor-h">A Coach With a Background in Martial Arts and Philosophy</h2>
       <p>Victor Pierantoni is the coach behind Liberation Coach. His background includes martial arts and the Zen and Stoic ideas he has discussed through Zen Stoic. His teaching considers attention, emotional experience and the choices people make in everyday life.</p>
@@ -322,9 +366,66 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold-line);outline-
   </div>
 </section>
 
+<section class="band stories" aria-labelledby="stories-h">
+  <div class="wrap">
+    <div class="stories-head">
+      <h2 id="stories-h">Client Experiences, in Context</h2>
+      <p>Explore what individual clients brought to coaching, the work they describe, and the changes they report.</p>
+    </div>
+    <div class="feature">
+      <a class="feature-media" href="https://www.youtube.com/watch?v=aONdLt0ra2k&amp;t=173s" data-yt="aONdLt0ra2k" data-t="173" data-title="Kyle, client conversation with Victor Pierantoni"><img src="img/c-kyle-victor.jpg" alt="Kyle and Victor Pierantoni side by side on a video call" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"></span><span class="sr">Play Kyle's conversation with Victor</span></a>
+      <div class="feature-text">
+        <blockquote><p>&ldquo;The first big win was you helping me recognize where my actual values are, not where I thought they should be.&rdquo;</p></blockquote>
+        <p class="who"><strong>Kyle</strong> Chiropractor, speaking with Victor</p>
+        <a class="btn btn-line" href="https://www.youtube.com/watch?v=aONdLt0ra2k&amp;t=173s" data-yt="aONdLt0ra2k" data-t="173" data-title="Kyle, client conversation with Victor Pierantoni">Watch Kyle's conversation</a>
+      </div>
+    </div>
+    <ul class="story-row" aria-label="More client conversations" tabindex="0">
+      <li class="story">
+        <a class="story-media" href="https://www.youtube.com/watch?v=MloppCis0AY&amp;t=127s" data-yt="MloppCis0AY" data-t="127" data-title="Amanda, client conversation with Victor Pierantoni"><img src="img/c-amanda.jpg" alt="Amanda speaking on a recorded call" width="480" height="600" loading="lazy"><span class="play" aria-hidden="true"></span><span class="sr">Play Amanda's conversation</span></a>
+        <blockquote><p>&ldquo;All of the wisdom and knowledge and knowing was already inside me. And you helped bring it out.&rdquo;</p></blockquote>
+        <p class="who"><strong>Amanda</strong> Runs a party supply company</p>
+      </li>
+      <li class="story">
+        <a class="story-media" href="https://www.youtube.com/watch?v=GUD1WNTQp3I&amp;t=160s" data-yt="GUD1WNTQp3I" data-t="160" data-title="Jeremy, client conversation with Victor Pierantoni"><img src="img/c-jeremy.jpg" alt="Jeremy speaking on a recorded call" width="480" height="600" loading="lazy"><span class="play" aria-hidden="true"></span><span class="sr">Play Jeremy's conversation</span></a>
+        <blockquote><p>&ldquo;What I like about Victor specifically is he understands the individual. When I was working with Victor, he spoke to me.&rdquo;</p></blockquote>
+        <p class="who"><strong>Jeremy</strong> Runs a digital marketing agency</p>
+      </li>
+      <li class="story">
+        <a class="story-media" href="https://www.youtube.com/watch?v=QlsY4K2MfG4&amp;t=298s" data-yt="QlsY4K2MfG4" data-t="298" data-title="Phil, client conversation with Victor Pierantoni"><img src="img/c-phil.jpg" alt="Phil speaking on a recorded call" width="480" height="600" loading="lazy"><span class="play" aria-hidden="true"></span><span class="sr">Play Phil's conversation</span></a>
+        <blockquote><p>&ldquo;I&#x27;m at peace. I&#x27;m at peace when I wake up and when I go to work.&rdquo;</p></blockquote>
+        <p class="who"><strong>Phil</strong> Business matchmaker</p>
+      </li>
+      <li class="story">
+        <a class="story-media" href="https://www.youtube.com/watch?v=EL2xr4g1jFo&amp;t=305s" data-yt="EL2xr4g1jFo" data-t="305" data-title="Mike, client conversation with Victor Pierantoni"><img src="img/c-mike.jpg" alt="Mike speaking on a recorded call" width="480" height="600" loading="lazy"><span class="play" aria-hidden="true"></span><span class="sr">Play Mike's conversation</span></a>
+        <blockquote><p>&ldquo;I feel like I&#x27;m now at a level where I&#x27;m becoming the man I&#x27;ve always wanted to be.&rdquo;</p></blockquote>
+        <p class="who"><strong>Mike</strong> Company vice president</p>
+      </li>
+      <li class="story">
+        <a class="story-media" href="https://www.youtube.com/watch?v=TVgst4iIn34&amp;t=210s" data-yt="TVgst4iIn34" data-t="210" data-title="Luke, client conversation with Victor Pierantoni"><img src="img/c-luke.jpg" alt="Luke speaking on a recorded call" width="480" height="600" loading="lazy"><span class="play" aria-hidden="true"></span><span class="sr">Play Luke's conversation</span></a>
+        <blockquote><p>&ldquo;What I experienced with Victor is he helped me be happy with what I have.&rdquo;</p></blockquote>
+        <p class="who"><strong>Luke</strong> Owns a supplement company</p>
+      </li>
+      <li class="story">
+        <a class="story-media" href="https://www.youtube.com/watch?v=xlpOEMLrxuY&amp;t=652s" data-yt="xlpOEMLrxuY" data-t="652" data-title="Anthony, client conversation with Victor Pierantoni"><img src="img/c-anthony.jpg" alt="Anthony speaking on a recorded call" width="480" height="600" loading="lazy"><span class="play" aria-hidden="true"></span><span class="sr">Play Anthony's conversation</span></a>
+        <blockquote><p>&ldquo;It&#x27;s okay to ask for help, it&#x27;s okay to lean on your team.&rdquo;</p></blockquote>
+        <p class="who"><strong>Anthony</strong> Business owner</p>
+      </li>
+    </ul>
+    <div class="stories-foot">
+      <p>Each account describes one person's experience. It does not promise the same result for someone else.</p>
+      <a class="btn btn-line" href="https://www.youtube.com/@Victor.LiberationCoach/videos">See every client conversation on YouTube</a>
+    </div>
+  </div>
+</section>
+<dialog class="player" id="player" aria-label="Client conversation video"><div class="player-box"><button class="player-close" type="button">Close video</button><div class="player-frame"></div></div></dialog>
+
 <section class="band paper" aria-labelledby="steps-h">
   <div class="wrap">
-    <div class="steps-head"><h2 id="steps-h">A Conversation Is the Next Step</h2><a class="btn btn-line" href="coaching.html">Explore 1:1 coaching</a></div>
+    <div class="steps-top">
+      <div class="steps-head"><h2 id="steps-h">A Conversation Is the Next Step</h2><a class="btn btn-line" href="coaching.html">Explore 1:1 coaching</a></div>
+      <figure class="zoom"><img src="img/v-zoom.jpg" alt="Victor Pierantoni smiling on a video call" width="880" height="660" loading="lazy"><figcaption>Placeholder: frame from a recorded client call on Victor's YouTube channel.</figcaption></figure>
+    </div>
     <ol class="path">
       <li><span class="dot" aria-hidden="true">1</span><h3>Apply</h3><p>Describe what you would like to work on.</p></li>
       <li><span class="dot" aria-hidden="true">2</span><h3>Meet Victor on Zoom</h3><p>The next step is a discovery call with Victor to explore fit. There is no obligation to proceed with coaching.</p></li>
@@ -376,6 +477,16 @@ v.addEventListener('play',label);v.addEventListener('pause',label);
 v.addEventListener('error',function(){b.parentNode.hidden=true;},true);
 if(!still){var pr=v.play();if(pr&&pr.catch)pr.catch(label);}label();
 b.addEventListener('click',function(){if(v.paused){var r=v.play();if(r&&r.catch)r.catch(label);}else{v.pause();}});})();
+(function(){var d=document.getElementById('player');if(!d||typeof d.showModal!=='function')return;
+var box=d.querySelector('.player-frame'),last=null;
+function shut(){box.innerHTML='';}
+d.addEventListener('close',function(){shut();if(last)last.focus();});
+d.querySelector('.player-close').addEventListener('click',function(){d.close();});
+d.addEventListener('click',function(ev){if(ev.target===d)d.close();});
+document.querySelectorAll('[data-yt]').forEach(function(a){a.addEventListener('click',function(ev){ev.preventDefault();last=a;
+var f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+a.dataset.yt+'?autoplay=1&rel=0&cc_load_policy=1&start='+a.dataset.t;
+f.title=a.dataset.title;f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;
+box.innerHTML='';box.appendChild(f);d.showModal();});});})();
 </script>
 </body>
 </html>
