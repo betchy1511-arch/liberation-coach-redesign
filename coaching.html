@@ -288,6 +288,53 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold-line);outline-
 .finale .text p a{color:var(--on-deep);font-weight:600;text-underline-offset:4px}
 @media (max-width:860px){.finale{grid-template-columns:1fr}.finale-photo{min-height:0;aspect-ratio:4/3}.finale-body{padding:var(--s5) var(--gut-r) var(--s5) var(--gut)}}
 
+
+/* v8: intros beside a photo, photos under split headings, questions head stacked, Meet Victor face clear */
+.intro{max-width:none;margin:0 0 var(--s5);text-align:left;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center}
+.intro p{margin:0}
+.intro-photo,.split-photo{margin:0}
+.intro-photo img,.split-photo img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:22px}
+.intro-photo figcaption,.split-photo figcaption{font-size:.75rem;color:var(--ink-2);margin-top:var(--s1)}
+.deep .split-photo figcaption{color:var(--on-deep-2)}
+.split-side{display:grid;gap:var(--s4);align-content:start}
+.split .body > .split-photo{margin-top:var(--s3)}
+.qs-head{grid-template-columns:1fr;gap:var(--s3);align-items:start;max-width:900px}
+.qs-head p.lead{font-size:clamp(1.2rem,1.6vw,1.4rem);max-width:56ch;margin:0}
+.victor .photo{grid-column:6 / span 7}
+.split .body .lead.inline{font-family:var(--display);font-size:clamp(1.4rem,2vw,1.75rem);line-height:1.45}
+.coach-steps{align-items:center}
+.coach-steps .zoom img{aspect-ratio:4/3}
+.qs-list{display:grid;gap:var(--s4);justify-items:start}
+.qs-list .q{width:100%}
+.qs-cta{color:var(--on-deep)}
+.story:nth-child(3n+2){margin-top:0}
+[aria-labelledby=start-h] .split{grid-template-columns:1fr;gap:var(--s4)}
+[aria-labelledby=start-h] .split .body{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
+.hero .enso figcaption{bottom:-52px}
+@media (max-width:860px){[aria-labelledby=start-h] .split .body{grid-template-columns:1fr}}
+.victor .photo img{height:auto;object-position:72% 35%}
+.statement{text-align:left}
+.statement .wrap.statement-grid{max-width:var(--wrap);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:center;justify-items:stretch}
+.statement-text{display:grid;gap:var(--s3);justify-items:start}
+.statement-text .say{margin:0;font-size:clamp(1.5rem,2.4vw,2.1rem)}
+.talk{margin:0}
+.talk figcaption{font-size:.85rem;color:var(--ink-2);margin-top:var(--s1)}
+.qs-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(40px,6vw,96px);align-items:center}
+.qs-head{margin-bottom:0;max-width:none;justify-items:start}
+.qs-head .qs-more{color:var(--on-deep-2);margin:0}
+.qs-head .btn-line{color:var(--on-deep)}
+.q li{font-size:clamp(1.7rem,2.8vw,2.6rem);grid-template-columns:56px 1fr}
+.stories-head{grid-template-columns:minmax(0,1fr) auto;align-items:end}
+.stories-head > div{display:grid;gap:var(--s3)}
+.stories-head > div p{max-width:56ch}
+@media (max-width:860px){.statement .wrap.statement-grid,.qs-grid{grid-template-columns:1fr}.stories-head{grid-template-columns:1fr;justify-items:start}}
+.foot-brand{display:grid;gap:var(--s3);justify-items:start;align-content:start}
+.foot-brand p{margin:0;max-width:34ch;font-size:.98rem}
+.foot-brand p a{text-decoration:underline;text-underline-offset:3px}
+.foot .foot-yt{color:var(--on-deep);border-color:rgba(241,245,244,.7);font-size:.95rem}
+.foot .foot-yt:hover{background:var(--on-deep);color:var(--deep);text-decoration:none}
+@media (max-width:860px){.intro{grid-template-columns:1fr;gap:var(--s3)}.intro-photo img,.split-photo img{aspect-ratio:16/10}}
+
 /* Footer */
 .site-footer{background:var(--deep);color:var(--on-deep-2);padding-block:var(--s5) var(--s4);border-top:1px solid rgba(255,255,255,.08)}
 .foot{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(2,minmax(0,1fr));gap:var(--s4)}
@@ -335,9 +382,9 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold-line);outline-
 
 <section class="after-hero" aria-labelledby="bring-h">
   <div class="wrap">
-    <div class="intro"><p>The offer is for founders, business owners and adult athletes. Bring a decision, a difficult conversation or a performance concern that matters in your life. Sessions take place online, and all coaching members receive Circle access.</p></div>
+    <div class="intro"><div class="intro-text"><p>The offer is for founders, business owners and adult athletes. Bring a decision, a difficult conversation or a performance concern that matters in your life. Sessions take place online, and all coaching members receive Circle access.</p></div><figure class="intro-photo"><img src="img/v-intro-coaching.jpg" alt="Victor Pierantoni listening on a video call" width="820" height="720" loading="lazy"><figcaption>Placeholder: frame from a recorded client call on Victor's YouTube channel.</figcaption></figure></div>
     <div class="split">
-      <h2 id="bring-h">Start With Something Specific</h2>
+      <div class="split-side"><h2 id="bring-h">Start With Something Specific</h2><figure class="split-photo"><img src="img/v-split-bring.jpg" alt="Victor Pierantoni smiling at his microphone" width="760" height="440" loading="lazy"><figcaption>Placeholder: frame from a talk on Victor's YouTube channel.</figcaption></figure></div>
       <div class="body">
         <p>For a founder, that could be a decision that keeps reopening or a conversation with someone you lead. You might want to understand why you avoid giving direct feedback, or what makes it difficult to trust someone with a responsibility. For an athlete, it could be pressure before competing, attention caught on a mistake or the demands of a changing sporting career.</p>
         <p>Personal and professional priorities can overlap. Describe where a business or sporting goal competes with a relationship, rest or enjoyment of what you do, and which part you want to examine with Victor.</p>
@@ -350,7 +397,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold-line);outline-
 
 <section class="band deep on-deep" aria-labelledby="examine-h">
   <div class="wrap split">
-    <h2 id="examine-h">What Can One on One Coaching Help You Examine?</h2>
+    <div class="split-side"><h2 id="examine-h">What Can One on One Coaching Help You Examine?</h2><figure class="split-photo"><img src="img/v-split-examine.jpg" alt="Victor Pierantoni explaining an idea at his microphone" width="760" height="440" loading="lazy"><figcaption>Placeholder: frame from a talk on Victor's YouTube channel.</figcaption></figure></div>
     <div class="body">
       <p class="lead">Victor asks questions about what happened, how you interpret it and what you want from the conversation. His work can also include attention to feelings and bodily sensations. These are examples from his coaching and teaching, not a fixed script for every session.</p>
       <p>A practical focus could be identifying a question to ask before deciding, checking an assumption or choosing an action to try. A chosen action is something you can do; the eventual business, personal or sporting result depends on more than a session.</p>
@@ -374,12 +421,14 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold-line);outline-
   <div class="wrap">
     <div class="online"><h2 id="online-h">Work With Victor Online</h2>
       <p class="lead">Coaching sessions take place online. All coaching members receive Circle access alongside their 1:1 work with Victor.</p></div>
-    <div class="steps-head"><h2 id="steps-h">Apply, Meet Victor, Then Decide</h2></div>
-    <ol class="path">
-      <li><span class="dot" aria-hidden="true">1</span><h3>Apply</h3><p>Describe the situation you want to work on and what you would like to be different.</p></li>
-      <li><span class="dot" aria-hidden="true">2</span><h3>Discovery Call</h3><p>The next step is a Zoom conversation with Victor to explore whether coaching is a fit. There is no obligation to proceed with coaching.</p></li>
-      <li><span class="dot" aria-hidden="true">3</span><h3>Your Decision</h3><p>If you choose to begin coaching, the work takes place online and coaching members receive Circle access.</p></li>
-    </ol>
+    <div class="next-grid coach-steps">
+      <div class="next-side"><h2 id="steps-h">Apply, Meet Victor, Then Decide</h2><figure class="zoom"><img src="img/v-split-start.jpg" alt="Victor Pierantoni on a video call" width="880" height="680" loading="lazy"><figcaption>Placeholder: frame from a recorded client call on Victor's YouTube channel.</figcaption></figure></div>
+      <ol class="journey">
+        <li><span class="n" aria-hidden="true">1</span><div><h3>Apply</h3><p>Describe the situation you want to work on and what you would like to be different.</p></div></li>
+        <li><span class="n" aria-hidden="true">2</span><div><h3>Discovery Call</h3><p>The next step is a Zoom conversation with Victor to explore whether coaching is a fit. There is no obligation to proceed with coaching.</p></div></li>
+        <li><span class="n" aria-hidden="true">3</span><div><h3>Your Decision</h3><p>If you choose to begin coaching, the work takes place online and coaching members receive Circle access.</p></div></li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -410,7 +459,7 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--gold-line);outline-
 <footer class="site-footer">
   <div class="wrap">
     <div class="foot">
-      <div><img src="img/logo.png" alt="Liberation Coach" width="1070" height="132"></div>
+      <div class="foot-brand"><img src="img/logo.png" alt="Liberation Coach" width="1070" height="132"><p>For a general question, podcast invitation or media inquiry, email <a href="mailto:victor@zenstoic.com">victor@zenstoic.com</a>.</p><a class="btn btn-line foot-yt" href="https://www.youtube.com/@Victor.LiberationCoach">Watch Victor on YouTube</a></div>
       <div><p class="foot-h">Coaching</p><ul><li><a href="coaching.html">Coaching</a></li><li><a href="#" data-dest="/method" title="Goes to /method (page not in this review round)">Method</a></li><li><a href="#" data-dest="/for-founders" title="Goes to /for-founders (page not in this review round)">For Founders</a></li><li><a href="#" data-dest="/for-athletes" title="Goes to /for-athletes (page not in this review round)">For Athletes</a></li><li><a href="#" data-dest="/about" title="Goes to /about (page not in this review round)">About</a></li><li><a href="#" data-dest="/apply" title="Goes to /apply (page not in this review round)">Apply</a></li></ul></div>
       <div><p class="foot-h">Information</p><ul>
         <li><a href="#" data-dest="/faq" title="Goes to /faq (page not in this review round)">FAQ</a></li><li><a href="#" data-dest="/contact" title="Goes to /contact (page not in this review round)">Contact</a></li><li><a href="#" data-dest="/privacy-policy" title="Goes to /privacy-policy (page not in this review round)">Privacy Policy</a></li>
